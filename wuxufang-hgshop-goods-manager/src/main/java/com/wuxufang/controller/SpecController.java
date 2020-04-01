@@ -27,8 +27,33 @@ public class SpecController {
 			@RequestParam(defaultValue = "1") int page) {
 
 		PageInfo<Spec> pageInfo = specService.list(name, page);
+//		pageInfo.getPages()
 		request.setAttribute("pageInfo", pageInfo);
+		request.setAttribute("name", name);
 		return "spec/list";
+	}
+	
+	@RequestMapping("toadd")
+	public String toadd(HttpServletRequest request) {
+		return "spec/add";
+	}
+	
+	@RequestMapping("add")
+	@ResponseBody
+	public String add(HttpServletRequest request, Spec spec) {
+		System.out.println("spec" + spec);
+		request.setAttribute("spec", spec);
+
+		List<SpecOption> optionList = spec.getOptionList();
+		//过滤空数据
+		for (int i = optionList.size(); i > 0; i--) {
+			SpecOption option = optionList.get(i - 1);
+			if (option.getOptionName() == null && option.getOrders() == 0) {
+				optionList.remove(i - 1);
+			}
+		}
+		return specService.add(spec) > 0 ? "success" : "failed";
+
 	}
 
 	@RequestMapping("toupdate")
@@ -56,5 +81,13 @@ public class SpecController {
 		}
 		return specService.update(spec) > 0 ? "success" : "failed";
 
+	}
+	
+	//批量删除
+	@ResponseBody
+	@RequestMapping("delBatch")
+	public String delBatch(@RequestParam("ids[]")int ids[]) {
+		int i = specService.deleteBatch(ids);
+		return i>0?"success":"failed";
 	}
 }

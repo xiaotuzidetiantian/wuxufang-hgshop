@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<!-- int addSpec(Spec spec); -->
-	<insert id="add" useGeneratedKeys="true" keyColumn="id"
+	<insert id="addSpec" useGeneratedKeys="true" keyColumn="id"
 		keyProperty="id">
 		insert into hg_spec(spec_name) values(#{specName})
 	</insert>

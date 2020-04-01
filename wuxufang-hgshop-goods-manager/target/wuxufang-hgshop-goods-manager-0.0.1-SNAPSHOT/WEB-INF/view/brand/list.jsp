@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>        
 <div>
-	放按钮
+	<!-- 放按钮 -->
 </div>  
 <div>
 	<table class="table">
