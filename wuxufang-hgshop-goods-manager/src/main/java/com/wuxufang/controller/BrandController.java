@@ -1,5 +1,7 @@
 package com.wuxufang.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.dubbo.config.annotation.Reference;
@@ -17,16 +19,30 @@ import com.wuxufang.service.BrandService;
 public class BrandController {
 
 	@Reference
-	private BrandService brandService;
+	BrandService brandService;
 
-	// 品牌列表
 	@RequestMapping("list")
-	public String list(HttpServletRequest request, String firstChar, @RequestParam(defaultValue = "1") Integer page,
-			@RequestParam(defaultValue = "3") Integer pageSize) {
-		PageInfo<Brand> info = brandService.list(firstChar, page, pageSize);
-		request.setAttribute("info", info);
-		request.setAttribute("firstChar", firstChar);
+	public String list(HttpServletRequest request, @RequestParam(defaultValue = "1") int page) {
+		PageInfo<Brand> pageInfo = brandService.list(page);
+		request.setAttribute("pageInfo", pageInfo);
 		return "brand/list";
 	}
 
+	@RequestMapping("toupdate")
+	public String toupdate(HttpServletRequest request, int id) {
+		Brand brand = brandService.brandById(id);
+		request.setAttribute("brand", brand);
+		return "brand/update";
+
+	}
+
+	@RequestMapping("update")
+	@ResponseBody
+	public String update(HttpServletRequest request, Brand brand) {
+		System.out.println("brand" + brand);
+		request.setAttribute("brand", brand);
+
+		return brandService.update(brand) > 0 ? "success" : "failed";
+
+	}
 }

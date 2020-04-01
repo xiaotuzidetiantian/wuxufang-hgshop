@@ -212,7 +212,7 @@
 						<!-- 端口号 -->
 						<port>9093</port>
 						<!-- 项目访问路径 -->
-						<host>192.168.1.3</host>
+						<host>192.168.0.104</host>
 					</httpConnector>
 					<contextHandlers>
 						<jettyWebAppContext>

@@ -9,11 +9,11 @@ import com.wuxufang.pojo.Brand;
 
 public interface BrandDao {
 
-	// 根据首字母查询
-//	List<Brand> listByFirstChar(String firstChar);
+	List<Brand> listByFirstChar(String firstChar);
 
-	// 品牌列表
-	List<Brand> list(@Param("firstChar") String firstChar);
+	List<Brand> list();
 
-	
+	Brand getById(int id);
+
+	int update(Brand brand);
 }

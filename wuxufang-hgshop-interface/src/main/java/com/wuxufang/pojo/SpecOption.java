@@ -12,7 +12,7 @@ public class SpecOption implements Serializable {
 	private Integer id;
 	private String optionName;
 	private Integer specId;
-	private Integer orders = 0;
+	private Integer orders;
 	private String specName;
 	
 	public SpecOption() {

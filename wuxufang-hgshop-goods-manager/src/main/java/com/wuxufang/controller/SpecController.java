@@ -19,8 +19,42 @@ import com.wuxufang.service.SpecService;
 @Controller
 @RequestMapping("spec")
 public class SpecController {
-	
 	@Reference
-	private SpecService specService;
+	SpecService specService;
 
+	@RequestMapping("list")
+	public String list(HttpServletRequest request, @RequestParam(defaultValue = "") String name,
+			@RequestParam(defaultValue = "1") int page) {
+
+		PageInfo<Spec> pageInfo = specService.list(name, page);
+		request.setAttribute("pageInfo", pageInfo);
+		return "spec/list";
+	}
+
+	@RequestMapping("toupdate")
+	public String toupdate(HttpServletRequest request, int id) {
+		Spec spec = specService.findById(id);
+		request.setAttribute("spec", spec);
+		return "spec/update";
+
+	}
+
+	@RequestMapping("update")
+	@ResponseBody
+	public String update(HttpServletRequest request, Spec spec) {
+		System.out.println("spec" + spec);
+		request.setAttribute("spec", spec);
+
+		List<SpecOption> optionList = spec.getOptionList();
+		//过滤空数据
+		for (int i = optionList.size(); i > 0; i--) {
+			SpecOption option = optionList.get(i - 1);
+			if (option.getOptionName() == null && option.getOrders() == 0) {
+				optionList.remove(i - 1);
+			}
+			option.setSpecId(spec.getId());
+		}
+		return specService.update(spec) > 0 ? "success" : "failed";
+
+	}
 }

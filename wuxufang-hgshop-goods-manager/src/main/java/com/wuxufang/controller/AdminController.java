@@ -9,9 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.wuxufang.common.HgConstant;
 
 @Controller
+@RequestMapping("admin")
 public class AdminController {
 
-	
-	
-	
+	@RequestMapping("tologin")
+	public String toLogin() {
+		return "login";
+	}
+
+	@RequestMapping("login")
+	public String login(HttpServletRequest request, String username, String password) {
+		request.getSession().setAttribute(HgConstant.USER_KEY, username);
+
+		return "redirect:/index";
+	}
 }

@@ -17,20 +17,27 @@ public class BrandServiceImpl implements BrandService {
 	@Autowired
 	private BrandDao brandDao;
 
-//	@Override
-//	public List<Brand> listByFirst(String firstChar) {
-//		
-//		return brandDao.listByFirstChar(firstChar);
-//	}
-
-	// 品牌列表
 	@Override
-	public PageInfo<Brand> list(String firstChar, Integer page, Integer pageSize) {
-		PageHelper.startPage(page, pageSize);
-		List<Brand> list = brandDao.list(firstChar);
-		PageInfo<Brand> info = new PageInfo<Brand>(list);
-		return info;
+	public List<Brand> listByFirst(String firstChar) {
+		// TODO Auto-generated method stub
+		return brandDao.listByFirstChar(firstChar);
 	}
 
-	
+	@Override
+	public PageInfo<Brand> list(int page) {
+		PageHelper.startPage(page, 10);
+		return new PageInfo<Brand>(brandDao.list());
+	}
+
+	@Override
+	public int update(Brand brand) {
+		// TODO Auto-generated method stub
+		return brandDao.update(brand);
+	}
+
+	@Override
+	public Brand brandById(int id) {
+		// TODO Auto-generated method stub
+		return brandDao.getById(id);
+	}
 }
