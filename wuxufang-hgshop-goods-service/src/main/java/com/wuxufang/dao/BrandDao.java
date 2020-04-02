@@ -9,7 +9,7 @@ import com.wuxufang.pojo.Brand;
 
 public interface BrandDao {
 
-	List<Brand> listByFirstChar(String firstChar);
+	List<Brand> listByFirstChar(@Param("firstChar")String firstChar);
 
 	List<Brand> list();
 

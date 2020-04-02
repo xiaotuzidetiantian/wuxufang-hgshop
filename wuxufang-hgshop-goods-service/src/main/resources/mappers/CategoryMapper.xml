@@ -13,6 +13,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			select="listByParentId"></collection>
 	</resultMap>
 
+	<!-- 获取分类详情 -->
+	<select id="getById" resultType="Category">
+		select id,name,path,parent_id as
+		parentId from hg_category where id=#{value}
+	</select>
+
 	<select id="listByParentId" resultMap="categoryMapper">
 		select * from hg_category
 		where parent_id=#{value}
