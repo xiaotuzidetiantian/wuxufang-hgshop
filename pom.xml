@@ -307,5 +307,8 @@
 		<module>wuxufang-hgshop-interface</module>
 		<module>wuxufang-hgshop-goods-service</module>
 		<module>wuxufang-hgshop-goods-manager</module>
+		<module>wuxufang-hgshop-user-interface</module>
+		<module>wuxufang-hgshop-user-service</module>
+		<module>wuxufang-hgshop-user-web</module>
 	</modules>
 </project>

@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>        
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div>
 	<!-- 放按钮 -->
-</div>  
+</div>
 <div>
 	<table class="table">
 		<tr>
@@ -15,26 +15,34 @@
 		</tr>
 		<c:forEach items="${pageInfo.list}" var="brand">
 			<tr>
-			<td>${brand.id}</td>
-			<td>${brand.name}</td>
-			<td>${brand.firstChar}</td>
-			<td>${brand.deletedFlag}</td>
-			<td>
-				<button type="button" class="btn btn-success" onclick="toModify(${brand.id})">修改</button>
-				<button type="button" class="btn btn-danger">删除</button>
-				
-			</td>
+				<td>${brand.id}</td>
+				<td>${brand.name}</td>
+				<td>${brand.firstChar}</td>
+				<td>${brand.deletedFlag}</td>
+				<td>
+					<button type="button" class="btn btn-success"
+						onclick="toModify(${brand.id})">修改</button>
+					<button type="button" class="btn btn-danger">删除</button>
+
+				</td>
 			</tr>
 		</c:forEach>
 		<tr>
-		 <td colspan="10">
-		 当前页${ pageInfo.pageNum}/${pageInfo.pages} 共${pageInfo.total}个品牌
-		
-		 
-		 </td>
+			<td colspan="10">当前页${ pageInfo.pageNum}/${pageInfo.pages}
+				共${pageInfo.total}个品牌 <a href="list?page=1">
+					<button>首页</button>
+			</a> <a href="list?page=${pageInfo.prePage==0?1:pageInfo.prePage}">
+					<button>上一页</button>
+			</a> <a href="list?page=${pageInfo.nextPage==0?pageInfo.pages:pageInfo.nextPage}">
+					<button>下一页</button>
+			</a> <a href="list?page=${pageInfo.pages}">
+					<button>尾页</button>
+			</a>
+
+			</td>
 		</tr>
 	</table>
-</div>  
+</div>
 <script>
 	function toModify(id){
 		$("#workcontent").load("/brand/toupdate?id="+id);

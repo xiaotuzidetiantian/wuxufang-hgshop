@@ -1,5 +1,7 @@
 package com.wuxufang.service;
 
+import java.util.List;
+
 import com.github.pagehelper.PageInfo;
 import com.wuxufang.pojo.Spec;
 
@@ -19,4 +21,7 @@ public interface SpecService {
 
 	// 列表分页
 	PageInfo<Spec> list(String name, int page);
+
+	// 获取所有的规格
+	List<Spec> listAll();
 }

@@ -81,7 +81,8 @@
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">小图</label>
 				<div class="col-sm-10">
-					<input type="file" class="form-control-file" id="file" name="file">
+					<img src="/pic/${spu.smallPic}" width="50px" height="50px"> <input
+						type="file" class="form-control-file" id="file" name="file">
 				</div>
 			</div>
 			<div class="form-group row">
@@ -145,13 +146,11 @@
 						$("#categoryId").val(node.id);
 						$("#addCategoryTree").hide();
 					}
-
 				}
 			});
 
 		}, "json");
 	}
-
 	initTree();
 </script>
 

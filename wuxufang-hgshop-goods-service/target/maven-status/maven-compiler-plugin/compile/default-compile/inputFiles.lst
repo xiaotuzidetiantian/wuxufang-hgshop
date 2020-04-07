@@ -1,8 +1,10 @@
 E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\service\impl\SpecServiceImpl.java
 E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\dao\CategoryDao.java
 E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\service\impl\BrandServiceImpl.java
+E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\service\impl\SkuServiceImpl.java
 E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\dao\SpecDao.java
 E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\service\impl\CategoryServiceImpl.java
+E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\dao\SkuDao.java
 E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\dao\SpuDao.java
 E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\service\impl\SpuServiceImpl.java
 E:\Eclipse--1708A--Work11\wuxufang-hgshop-parent\wuxufang-hgshop-goods-service\src\main\java\com\wuxufang\dao\BrandDao.java

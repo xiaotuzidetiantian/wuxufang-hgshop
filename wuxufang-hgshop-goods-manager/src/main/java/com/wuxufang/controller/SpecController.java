@@ -90,4 +90,12 @@ public class SpecController {
 		int i = specService.deleteBatch(ids);
 		return i>0?"success":"failed";
 	}
+	
+	//获取某一个规格的所有属性值
+	@ResponseBody
+	@RequestMapping("getOptions")
+	public List<SpecOption> getOptions(int specId) {
+		Spec spec = specService.findById(specId);
+		return spec.getOptionList();
+	}
 }

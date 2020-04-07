@@ -62,7 +62,7 @@
 			type : "post",
 			// 成功后的回调函数
 			success : function(data) {
-				//提交成功以后，要刷新页面
+				//提交成功以后，要书信页面
 				if (data == "success") {
 					alert('成功')
 					$("#workcontent").load('/spec/list');

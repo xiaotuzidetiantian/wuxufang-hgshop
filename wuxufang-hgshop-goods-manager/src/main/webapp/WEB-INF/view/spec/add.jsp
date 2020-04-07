@@ -18,7 +18,8 @@
 <button type="button" class="btn btn-success" onclick="commitData()">提交</button>
 
 <script>
-	var maxIndex = 0;//添加规格属性的索引编号
+	// 添加的规格属性的索引编号
+	var maxIndex = 0;
 
 	function remove(obj) {
 		obj.parent().parent().remove();
@@ -39,7 +40,7 @@
 			type : "post",
 			// 成功后的回调函数
 			success : function(data) {
-				//提交成功以后，要刷新页面
+				//提交成功以后，要书信页面
 				if (data == "success") {
 					alert('成功')
 					$("#workcontent").load('/spec/list');
@@ -51,7 +52,10 @@
 			}
 		})
 	}
-	//添加规格属性
+
+	/**
+	 添加规格一个属性
+	 */
 	function addOption() {
 		var str = '<div class="form-row">'
 				+ '<div class="form-group col-md-5">'

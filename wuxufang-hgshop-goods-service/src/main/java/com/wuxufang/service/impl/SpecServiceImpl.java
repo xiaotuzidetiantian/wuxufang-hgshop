@@ -75,4 +75,9 @@ public class SpecServiceImpl implements SpecService {
 		return new PageInfo<Spec>(specDao.list(name));
 	}
 
+	@Override
+	public List<Spec> listAll() {
+		return specDao.listAll();
+	}
+
 }

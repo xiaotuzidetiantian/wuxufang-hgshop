@@ -28,6 +28,7 @@
 				<label class="col-sm-2 col-form-label">品牌</label>
 				<div class="col-sm-10">
 					<select name="brandId">
+						<option value="-1">--请选择--</option>
 						<c:forEach items="${brandList}" var="brand">
 							<option value="${brand.id}">${brand.name}</option>
 						</c:forEach>
@@ -125,4 +126,3 @@
 
 	initTree();
 </script>
-
